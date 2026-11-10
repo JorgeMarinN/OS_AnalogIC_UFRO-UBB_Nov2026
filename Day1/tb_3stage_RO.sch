@@ -24,7 +24,8 @@ vvss vss 0 0
 
 .control
    tran 10p 10n
-   wrdata TT_3stage_RO_v1p1.txt v(V_1)
+   wrdata TT_3stage_RO_v1p1.txt v(V_1) v(V_2) v(V_3)
+   wrdata TT_3stage_RO_power_v1p1.txt v(vcc) i(vvcc)
    plot v(V_1) v(V_2) v(V_3)
 .endc
 "}
