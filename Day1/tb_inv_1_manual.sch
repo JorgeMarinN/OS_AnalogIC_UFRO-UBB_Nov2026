@@ -1,26 +1,33 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N 610 -550 640 -550 {lab=vin}
 N 720 -550 750 -550 {lab=vout}
 N 670 -515 670 -490 {lab=GND}
 N 670 -620 670 -585 {lab=vdd}
-C {devices/code_shown.sym} 210 -650 0 0 {name=NGSPICE
+C {devices/code_shown.sym} 120 -750 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-
 vin vin 0 dc=0.6
 vdd vdd 0 dc=1.2
 
 .control
+
+set color0=white
+set color1=black
 save all
+
+let vthn = @n.x1.xm1.nsg13_lv_nmos[vth]
 
 dc vin 0 1.2 0.01
 
 plot v(vout)
+
+print vthn
 
 
 .endc
