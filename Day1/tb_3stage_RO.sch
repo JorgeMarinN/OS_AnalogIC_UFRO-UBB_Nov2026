@@ -1,8 +1,9 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.3}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N 1310 -430 1370 -430 {
 lab=V_2}
@@ -17,7 +18,7 @@ lab=V_1}
 C {devices/code_shown.sym} 1390 -780 0 0 {name=s1 only_toplevel=false value=".include /opt/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
 vvcc vcc 0 dc 1.2
 vvss vss 0 0
-.option temp = 200
+.option temp = 100
 .ic v(V_1) = 0
 .ic v(V_2) = 1.2
 
@@ -42,6 +43,6 @@ value="
 .lib cornerCAP.lib cap_typ
 .endif
 "}
-C {sg13g2_stdcells/sg13g2_inv_2.sym} 1270 -430 0 0 {name=x1 VDD=VCC VSS=VSS prefix=sg13g2_ }
-C {sg13g2_stdcells/sg13g2_inv_2.sym} 1410 -430 0 0 {name=x2 VDD=VCC VSS=VSS prefix=sg13g2_ }
-C {sg13g2_stdcells/sg13g2_inv_2.sym} 1560 -430 0 0 {name=x3 VDD=VCC VSS=VSS prefix=sg13g2_ }
+C {sg13g2_inv_2.sym} 1270 -430 0 0 {name=x1 VDD=VCC VSS=VSS prefix=sg13g2_ }
+C {sg13g2_inv_2.sym} 1410 -430 0 0 {name=x2 VDD=VCC VSS=VSS prefix=sg13g2_ }
+C {sg13g2_inv_2.sym} 1560 -430 0 0 {name=x3 VDD=VCC VSS=VSS prefix=sg13g2_ }

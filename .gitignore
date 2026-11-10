@@ -1,3 +1,8 @@
+#Backup and simulation folders
+Day1/simulations/
+Day2/simulations/
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
