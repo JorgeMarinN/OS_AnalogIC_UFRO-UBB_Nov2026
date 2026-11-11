@@ -1,0 +1,21 @@
+#%lvsdb-klayout
+J(
+ W(large_delay_vto1p1)
+ U(0.001)
+ K(sg13_lv_nmos MOS4
+  E(rfmode 1 0)
+ )
+ K(sg13_lv_pmos MOS4
+  E(rfmode 1 0)
+ )
+)
+H(
+ K(sg13_lv_pmos MOS4
+  E(rfmode 1 0)
+ )
+ K(sg13_lv_nmos MOS4
+  E(rfmode 1 0)
+ )
+)
+Z(
+)

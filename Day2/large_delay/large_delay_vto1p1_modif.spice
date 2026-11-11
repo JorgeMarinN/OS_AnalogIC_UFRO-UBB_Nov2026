@@ -1,0 +1,24 @@
+** sch_path: /home/designer/shared/OS_AnalogIC_UCU_July2025/Day3/large_delay/large_delay_vto1p1.sch
+.subckt large_delay_vto1p1 VCC VSS VIN VOUT
+*.PININFO VIN:B VOUT:B VCC:B VSS:B
+x1[0] VIN VCC VSS n2 sg13g2_dlygate4sd3_1
+x1[1] n2 VCC VSS n3 sg13g2_dlygate4sd3_1
+x1[2] n3 VCC VSS VOUT sg13g2_dlygate4sd3_1
+.ends
+
+* Library name: sg13g2_stdcell
+* Cell name: sg13g2_dlygate4sd3_1
+* View name: schematic
+* Inherited view list: spectre cmos_sch cmos.sch schematic veriloga ahdl
+* pspice dspf
+.subckt sg13g2_dlygate4sd3_1 A VDD VSS X
+MP3 X net3 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 ad=0 as=0 pd=0 ps=0 m=1
+MP2 net3 net2 VDD VDD sg13_lv_pmos w=1.000u l=500.0n ng=1 ad=0 as=0 pd=0 ps=0 m=1
+MP1 net2 net1 VDD VDD sg13_lv_pmos w=1.000u l=500.0n ng=1 ad=0 as=0 pd=0 ps=0 m=1
+MP0 net1 A VDD VDD sg13_lv_pmos w=420.00n l=130.00n ng=1 ad=0 as=0 pd=0 ps=0 m=1
+MN3 X net3 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 ad=0 as=0 pd=0 ps=0 m=1
+MN2 net3 net2 VSS VSS sg13_lv_nmos w=420.00n l=500.0n ng=1 ad=0 as=0 pd=0 ps=0 m=1
+MN1 net2 net1 VSS VSS sg13_lv_nmos w=420.00n l=500.0n ng=1 ad=0 as=0 pd=0 ps=0 m=1
+MN0 net1 A VSS VSS sg13_lv_nmos w=420.00n l=130.00n ng=1 ad=0 as=0 pd=0 ps=0 m=1
+.ends
+* End of subcircuit definition.

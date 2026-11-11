@@ -1,0 +1,74 @@
+** sch_path: /home/designer/shared/OS_AnalogIC_UFRO-UBB_Nov2026/Day2/large_delay/tb_largedelay_vto1p1.sch
+**.subckt tb_largedelay_vto1p1
+VCC VCC GND 1.2
+VSS VSS GND 0
+VIN VIN VSS PULSE(0 1.2 3u 1n 1n 12u 24u)
+C1 VOUT VSS 10f
+x1 VCC VSS VIN VOUT large_delay_vto1p1
+**** begin user architecture code
+
+
+.option scale=1e-6
+.save v(vin) v(vout)
+.control
+tran 2n 6u
+plot v(vin) v(vout)
+plot v(vin) v(vout)+2
+.endc
+
+.measure tran tdelay
++ TRIG tran1.V(VIN) TD=0u VAL=0.6 RISE=1
++ TARG tran1.V(VOUT) TD=0u VAL=0.6 RISE=1
+
+
+
+
+
+
+.param corner=0
+
+.if (corner==0)
+.lib /opt/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
+.lib /opt/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
+.lib /opt/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerRES.lib res_typ
+.lib /opt/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerCAP.lib cap_typ
+.endif
+
+.include /opt/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  large_delay_vto1p1.sym # of pins=4
+** sym_path: /home/designer/shared/OS_AnalogIC_UFRO-UBB_Nov2026/Day2/large_delay/large_delay_vto1p1.sym
+** sch_path: /home/designer/shared/OS_AnalogIC_UFRO-UBB_Nov2026/Day2/large_delay/large_delay_vto1p1.sch
+.subckt large_delay_vto1p1 VCC VSS VIN VOUT
+*.iopin VIN
+*.iopin VOUT
+*.iopin VCC
+*.iopin VSS
+x1[0] n2 VIN VCC VSS sg13g2_dlygate4sd3_1
+x1[1] n3 n2 VCC VSS sg13g2_dlygate4sd3_1
+x1[2] VOUT n3 VCC VSS sg13g2_dlygate4sd3_1
+.ends
+
+
+* expanding   symbol:  sg13g2_dlygate4sd3_1.sym # of pins=2
+** sym_path: /opt/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/sym/xschem/sg13g2_dlygate4sd3_1.sym
+** sch_path: /opt/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/sch/xschem/sg13g2_dlygate4sd3_1.sch
+.subckt sg13g2_dlygate4sd3_1 X A VDD VSS
+
+*.ipin A
+*.opin X
+XM1 net3 A VSS VSS sg13_lv_nmos w=420.00n l=130.00n ng=1 m=1 mm_ok=1
+XM2 net1 net3 VSS VSS sg13_lv_nmos w=420.00n l=500.0n ng=1 m=1 mm_ok=1
+XM3 net2 net1 VSS VSS sg13_lv_nmos w=420.00n l=500.0n ng=1 m=1 mm_ok=1
+XM4 X net2 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 m=1 mm_ok=1
+XM5 net3 A VDD VDD sg13_lv_pmos w=420.00n l=130.00n ng=1 m=1 mm_ok=1
+XM6 net1 net3 VDD VDD sg13_lv_pmos w=1.000u l=500.0n ng=1 m=1 mm_ok=1
+XM7 net2 net1 VDD VDD sg13_lv_pmos w=1.000u l=500.0n ng=1 m=1 mm_ok=1
+XM8 X net2 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 m=1 mm_ok=1
+.ends
+
+.GLOBAL GND
+.end

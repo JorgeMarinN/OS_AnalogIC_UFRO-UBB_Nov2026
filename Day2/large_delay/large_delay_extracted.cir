@@ -1,0 +1,52 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 02/07/2025 06:27
+
+.SUBCKT large_delay
+M$1 \$5 A VSS VSS sg13_lv_nmos L=0.13u W=0.42u AS=0.1428p AD=0.0798p PS=1.52u
++ PD=0.8u
+M$2 VSS \$5 \$7 VSS sg13_lv_nmos L=0.5u W=0.42u AS=0.0798p AD=0.1428p PS=0.8u
++ PD=1.52u
+M$3 \$9 A|X VSS VSS sg13_lv_nmos L=0.13u W=0.42u AS=0.1428p AD=0.0798p PS=1.52u
++ PD=0.8u
+M$4 VSS \$9 \$10 VSS sg13_lv_nmos L=0.5u W=0.42u AS=0.0798p AD=0.1428p PS=0.8u
++ PD=1.52u
+M$5 \$12 A|X$1 VSS VSS sg13_lv_nmos L=0.13u W=0.42u AS=0.1428p AD=0.0798p
++ PS=1.52u PD=0.8u
+M$6 VSS \$12 \$13 VSS sg13_lv_nmos L=0.5u W=0.42u AS=0.0798p AD=0.1428p PS=0.8u
++ PD=1.52u
+M$7 VSS \$7 \$8 VSS sg13_lv_nmos L=0.5u W=0.42u AS=0.1426p AD=0.1428p PS=1.16u
++ PD=1.52u
+M$8 VSS \$8 A|X VSS sg13_lv_nmos L=0.13u W=0.74u AS=0.1426p AD=0.2516p PS=1.16u
++ PD=2.16u
+M$9 VSS \$10 \$11 VSS sg13_lv_nmos L=0.5u W=0.42u AS=0.1426p AD=0.1428p
++ PS=1.16u PD=1.52u
+M$10 VSS \$11 A|X$1 VSS sg13_lv_nmos L=0.13u W=0.74u AS=0.1426p AD=0.2516p
++ PS=1.16u PD=2.16u
+M$11 VSS \$13 \$14 VSS sg13_lv_nmos L=0.5u W=0.42u AS=0.1426p AD=0.1428p
++ PS=1.16u PD=1.52u
+M$12 VSS \$14 X VSS sg13_lv_nmos L=0.13u W=0.74u AS=0.1426p AD=0.2516p PS=1.16u
++ PD=2.16u
+M$13 VDD A \$5 VDD sg13_lv_pmos L=0.13u W=0.42u AS=0.1523p AD=0.1428p PS=1.38u
++ PD=1.52u
+M$14 VDD \$5 \$7 VDD sg13_lv_pmos L=0.5u W=1u AS=0.1523p AD=0.34p PS=1.38u
++ PD=2.68u
+M$15 VDD A|X \$9 VDD sg13_lv_pmos L=0.13u W=0.42u AS=0.1523p AD=0.1428p
++ PS=1.38u PD=1.52u
+M$16 VDD \$9 \$10 VDD sg13_lv_pmos L=0.5u W=1u AS=0.1523p AD=0.34p PS=1.38u
++ PD=2.68u
+M$17 VDD A|X$1 \$12 VDD sg13_lv_pmos L=0.13u W=0.42u AS=0.1523p AD=0.1428p
++ PS=1.38u PD=1.52u
+M$18 VDD \$12 \$13 VDD sg13_lv_pmos L=0.5u W=1u AS=0.1523p AD=0.34p PS=1.38u
++ PD=2.68u
+M$19 \$8 \$7 VDD VDD sg13_lv_pmos L=0.5u W=1u AS=0.34p AD=0.2254p PS=2.68u
++ PD=1.53u
+M$20 VDD \$8 A|X VDD sg13_lv_pmos L=0.13u W=1.12u AS=0.2254p AD=0.4256p
++ PS=1.53u PD=3u
+M$21 \$11 \$10 VDD VDD sg13_lv_pmos L=0.5u W=1u AS=0.34p AD=0.2254p PS=2.68u
++ PD=1.53u
+M$22 VDD \$11 A|X$1 VDD sg13_lv_pmos L=0.13u W=1.12u AS=0.2254p AD=0.4256p
++ PS=1.53u PD=3u
+M$23 \$14 \$13 VDD VDD sg13_lv_pmos L=0.5u W=1u AS=0.34p AD=0.2254p PS=2.68u
++ PD=1.53u
+M$24 VDD \$14 X VDD sg13_lv_pmos L=0.13u W=1.12u AS=0.2254p AD=0.4256p PS=1.53u
++ PD=3u
+.ENDS large_delay
