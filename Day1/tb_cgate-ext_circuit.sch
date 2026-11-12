@@ -52,7 +52,7 @@ C {sg13g2_pr/sg13_lv_nmos.sym} 2030 -1430 1 0 {name=M1
 l=1u
 w=5u
 ng=1
-m=2
+m=20
 model=sg13_lv_nmos
 spiceprefix=X
 }

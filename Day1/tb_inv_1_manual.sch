@@ -21,13 +21,13 @@ set color0=white
 set color1=black
 save all
 
-let vthn = @n.x1.xm1.nsg13_lv_nmos[vth]
+*let vthn = @n.x1.xm1.nsg13_lv_nmos[vth]
 
 dc vin 0 1.2 0.01
 
 plot v(vout)
 
-print vthn
+*print vthn
 
 
 .endc
