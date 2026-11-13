@@ -1,0 +1,64 @@
+v {xschem version=3.4.8RC file_version=1.3}
+G {}
+K {}
+V {}
+S {}
+F {}
+E {}
+N 1310 -430 1370 -430 {
+lab=V_2}
+N 1450 -430 1520 -430 {
+lab=V_3}
+N 1230 -510 2500 -510 {
+lab=V_1}
+N 1230 -510 1230 -430 {
+lab=V_1}
+N 1740 -430 1800 -430 {
+lab=#net1}
+N 1880 -430 1950 -430 {
+lab=#net2}
+N 2210 -430 2270 -430 {
+lab=#net3}
+N 2350 -430 2420 -430 {
+lab=#net4}
+N 1600 -430 1660 -430 {lab=#net5}
+N 2030 -430 2130 -430 {lab=#net6}
+N 2500 -510 2500 -430 {lab=V_1}
+C {devices/code_shown.sym} 1390 -780 0 0 {name=s1 only_toplevel=false value=".include /opt/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+vvcc vcc 0 dc 1.2
+vvss vss 0 0
+.option temp = 100
+.ic v(V_1) = 0
+.ic v(V_2) = 1.2
+
+.control
+   tran 10p 10n
+   wrdata TT_3stage_RO_v1p1.txt v(V_1) v(V_2) v(V_3)
+   wrdata TT_3stage_RO_power_v1p1.txt v(vcc) i(vvcc)
+   plot v(V_1) v(V_2) v(V_3)
+.endc
+"}
+C {devices/lab_pin.sym} 1230 -480 0 0 {name=p1 sig_type=std_logic lab=V_1}
+C {devices/lab_pin.sym} 1340 -430 1 0 {name=p2 sig_type=std_logic lab=V_2}
+C {devices/lab_pin.sym} 1490 -430 1 0 {name=p3 sig_type=std_logic lab=V_3}
+C {devices/code_shown.sym} 1070 -770 0 0 {name=MODEL1 only_toplevel=true
+format="tcleval( @value )"
+value="
+
+.param corner=0
+
+.if (corner==0)
+.lib cornerMOSlv.lib mos_tt
+.lib cornerRES.lib res_typ
+.lib cornerCAP.lib cap_typ
+.endif
+"}
+C {sg13g2_inv_2.sym} 1270 -430 0 0 {name=x1[0:9] VDD=VCC VSS=VSS prefix=sg13g2_ }
+C {sg13g2_inv_2.sym} 1410 -430 0 0 {name=x2[0:9] VDD=VCC VSS=VSS prefix=sg13g2_ }
+C {sg13g2_inv_2.sym} 1560 -430 0 0 {name=x3[0:9] VDD=VCC VSS=VSS prefix=sg13g2_ }
+C {sg13g2_inv_2.sym} 1700 -430 0 0 {name=x4[0:9] VDD=VCC VSS=VSS prefix=sg13g2_ }
+C {sg13g2_inv_2.sym} 1840 -430 0 0 {name=x5[0:9] VDD=VCC VSS=VSS prefix=sg13g2_ }
+C {sg13g2_inv_2.sym} 1990 -430 0 0 {name=x6[0:9] VDD=VCC VSS=VSS prefix=sg13g2_ }
+C {sg13g2_inv_2.sym} 2170 -430 0 0 {name=x7[0:9] VDD=VCC VSS=VSS prefix=sg13g2_ }
+C {sg13g2_inv_2.sym} 2310 -430 0 0 {name=x8[0:9] VDD=VCC VSS=VSS prefix=sg13g2_ }
+C {sg13g2_inv_2.sym} 2460 -430 0 0 {name=x9[0:9] VDD=VCC VSS=VSS prefix=sg13g2_ }

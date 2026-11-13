@@ -44,6 +44,6 @@ value="
 .lib cornerCAP.lib cap_typ
 .endif
 "}
-C {sg13g2_inv_2.sym} 1270 -430 0 0 {name=x1 VDD=VCC VSS=VSS prefix=sg13g2_ }
-C {sg13g2_inv_2.sym} 1410 -430 0 0 {name=x2 VDD=VCC VSS=VSS prefix=sg13g2_ }
-C {sg13g2_inv_2.sym} 1560 -430 0 0 {name=x3 VDD=VCC VSS=VSS prefix=sg13g2_ }
+C {sg13g2_inv_2.sym} 1270 -430 0 0 {name=x1[0:9] VDD=VCC VSS=VSS prefix=sg13g2_ }
+C {sg13g2_inv_2.sym} 1410 -430 0 0 {name=x2[0:9] VDD=VCC VSS=VSS prefix=sg13g2_ }
+C {sg13g2_inv_2.sym} 1560 -430 0 0 {name=x3[0:9] VDD=VCC VSS=VSS prefix=sg13g2_ }

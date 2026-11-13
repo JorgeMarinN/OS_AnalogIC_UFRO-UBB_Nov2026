@@ -73,6 +73,9 @@ trans3 = pya.Trans(pya.Vector(um2dbu(x3_um), um2dbu(y3_um)))
 # Add a single instance (no array) to the top cell
 top.insert(pya.CellInstArray(dly_cell.cell_index(), trans3))
 
+# Metal1 rectangle (layer 8/0)
+add_box(L_M1, 5.02000, 2.41000, 5.60500, 3.08000)
+
 # ---------- 7. (Optional) Save result --------------------------------
 #layout.write("updated_with_dly.gds")
 print("Layout updated – sg13g2_dlygate4sd3_1 placed at ({:.3f}, {:.3f}), ({:.3f}, {:.3f}) and ({:.3f}, {:.3f}) µm".format(x_um, y_um,x2_um, y2_um,x3_um, y3_um))
